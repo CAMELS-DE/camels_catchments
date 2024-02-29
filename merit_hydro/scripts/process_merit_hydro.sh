@@ -19,9 +19,9 @@ cp /input_data/config.py /delineator/config.py
 echo "[$(date +%T)] Copied config.py from input_data to delineator."
 
 # run delineator
-# echo "[$(date +%T)] Starting delineaton of MERIT HYDRO basins..."
-# cd /delineator && python delineate.py > /output_data/scripts/delineation.log 2>&1
-# echo "[$(date +%T)] Finished delineation of MERIT HYDRO basins, see delineation.log for details."
+echo "[$(date +%T)] Starting delineaton of MERIT HYDRO basins..."
+cd /delineator && python delineate.py > /output_data/scripts/delineation.log 2>&1
+echo "[$(date +%T)] Finished delineation of MERIT HYDRO basins, see delineation.log for details."
 
 # fill potential holes in the delineated catchments
 echo "[$(date +%T)] Filling holes in the delineated catchments..."
