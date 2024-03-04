@@ -8,6 +8,9 @@ mkdir -p /output_data/scripts
 # logging
 exec > >(tee -a /output_data/scripts/processing.log) 2>&1
 
+# Start processing
+echo "[$(date +%F\ %T)] Starting processing of MERIT Hydro catchments for the CAMELS-DE dataset...\n\n"
+
 # create outlets.csv from CAMELS metadata
 echo "[$(date +%T)] Creating outlets.csv from CAMELS metadata..."
 python /scripts/01_get_outlets.py
