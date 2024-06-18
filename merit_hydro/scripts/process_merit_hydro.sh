@@ -9,7 +9,7 @@ mkdir -p /output_data/scripts
 exec > >(tee -a /output_data/scripts/processing.log) 2>&1
 
 # Start processing
-echo "[$(date +%F\ %T)] Starting processing of MERIT Hydro catchments for the CAMELS-DE dataset...\n\n"
+echo "[$(date +%F\ %T)] Starting processing of MERIT Hydro catchments for the CAMELS-DE dataset..."
 
 # create outlets.csv from CAMELS metadata
 echo "[$(date +%T)] Creating outlets.csv from CAMELS metadata..."
@@ -40,12 +40,12 @@ echo "[$(date +%T)] Saved delineated catchments to CAMELS stations with 03_add_c
 
 # select catchments based on criteria: inside of the borders of Germany (HYRAS availability), minimum area, maximum area, allowed difference to reported area
 echo "[$(date +%T)] Adding station selection criteria to metadata..."
-papermill /scripts/04_add_selection_criteria_to_metadata.ipynb /output_data/scripts/04_add_selection_criteria_to_metadata.ipynb -p min_years_of_q 10 -p min_area 5 -p max_area 15000 -p maximum_difference_to_reported_area 0.1 --no-progress-bar
+papermill /scripts/04_add_selection_criteria_to_metadata.ipynb /output_data/scripts/04_add_selection_criteria_to_metadata.ipynb -p min_years_of_q 10 -p min_area 5 -p max_area 15000 -p maximum_difference_to_reported_area 0.2 --no-progress-bar
 echo "[$(date +%T)] Added station selection criteria to metadata with 04_add_selection_criteria_to_metadata.ipynb"
 
-# copy scripts to /camelsp/output_data/scripts/catchments
-mkdir -p /camelsp/output_data/scripts/catchments
-cp /output_data/scripts/* /camelsp/output_data/scripts/catchments/
+# copy scripts to /camelsp/output_data/scripts/catchments/merit_hydro/
+mkdir -p /camelsp/output_data/scripts/catchments/merit_hydro/
+cp /output_data/scripts/* /camelsp/output_data/scripts/catchments/merit_hydro/
 
 # change permissions of the output data
 chmod -R 777 /camelsp/output_data/
