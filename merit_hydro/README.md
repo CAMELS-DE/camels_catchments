@@ -3,7 +3,7 @@
 ## Description
 
 Repository to delineate catchments for CAMELS-DE dataset using the MERIT Hydro dataset.  
-The [Global Watersheds delineator](https://github.com/mheberger/delineator) is used to delineate MERIT Hydro catchments for all gauging stations in CAMELS-DE.  
+The [Global Watersheds delineator](https://github.com/mheberger/delineator) (DOI: 10.5281/zenodo.7314287) is used to delineate MERIT Hydro catchments for all gauging stations in CAMELS-DE.  
 Extracted catchment boundaries are copied to the camelsp `output_data` directory as a .geojson file for each station, where other tools process the data further and organize it in the folder structure.
 
 ## Container
