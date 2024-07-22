@@ -27,12 +27,6 @@ RUN pip install -e /camelsp
 RUN git clone https://github.com/AlexDo1/delineator.git
 RUN pip install -r /delineator/requirements.txt
 
-# Copy script to the container
-#COPY scripts/process_merit_hydro.sh /scripts/process_merit_hydro.sh
-
-# Make the script executable
-# RUN chmod +x /scripts/process_merit_hydro.sh
-
 WORKDIR /scripts
 
 # Run the .sh script
