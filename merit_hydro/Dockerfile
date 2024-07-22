@@ -27,6 +27,7 @@ RUN pip install -e /camelsp
 RUN git clone https://github.com/AlexDo1/delineator.git
 RUN pip install -r /delineator/requirements.txt
 
+COPY ./scripts /scripts
 WORKDIR /scripts
 
 # Run the .sh script
